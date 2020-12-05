@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true })); // body-parser
 app.use(bodyParser.json()); // body-parser
 
-app.listen(3000);
+app.listen(process.env.PORT || 5000);
 
 app.get("/", (req, res) => {
   res.send(
