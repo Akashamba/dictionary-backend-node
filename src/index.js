@@ -16,7 +16,7 @@ app.listen(3000);
 
 app.get("/", (req, res) => {
   res.send(
-    'API hit successfully. Send request with word in params like "/run".'
+    'API hit successfully. Send request with word in params like "/api/run".'
   );
 });
 
