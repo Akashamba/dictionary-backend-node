@@ -18,8 +18,6 @@ app.get("/api/:word", (req, res) => {
   extract(req.params.word, res);
 });
 
-// const app_id = "3a12c817";
-// const app_key = "5ad5f3e79690e46fd4adbd080cfe9883";
 
 const app_id = "1527fb95";
 const app_key = "21091ba0a0924ebb05f4207c4b57ee23";
@@ -73,6 +71,7 @@ function extract(word, this_response) {
                       if(results[i].lexicalEntries[j].entries[k].senses)
                         for(let l=0; l<results[i].lexicalEntries[j].entries[k].senses.length; l++) {
                           let sense = {};
+                          sense.category = results[i].lexicalEntries[j].lexicalCategory.text
                           sense.examples = [];
                           try{sense.definition = results[i].lexicalEntries[j].entries[k].senses[l].definitions[0]}catch(e){console.log('Definition: ', e.message)}
                           if(results[i].lexicalEntries[j].entries[k].senses[l].examples)
